@@ -1,0 +1,14 @@
+{
+  "name": "stream-transcript-extractor-extension",
+  "version": "1.0.0",
+  "description": "Microsoft Stream one click transcript extractor. Copies it to your clipboard for easy summarization of meetings via AI (LLMs)",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vullnet Dyla",
+  "license": "MIT",
+  "devDependencies": {
+    "chrome-types": "^0.1.312"
+  }
+}
