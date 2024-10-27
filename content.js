@@ -1,3 +1,24 @@
+(() => {
+	const { fetch: originalFetch } = window;
+
+	window.fetch = async (...args) => {
+		let [resource, config] = args;
+		const response = await originalFetch(resource, config);
+
+		const clone = response.clone();
+
+		console.log("yohooo a fetch was made =======================")
+		clone.json()
+			.then((data) => console.log("heeeeere's Johnny! ================", data))
+			.catch((err) => console.error(err));
+
+		return response;
+	};
+
+
+})();
+
+
 let wrapper = document.createElement('div');
 let copyTranscriptButton = document.createElement('button');
 let closeButton = document.createElement('button');
@@ -31,16 +52,6 @@ closeButton.addEventListener('click', () => {
 
 document.querySelector("body").appendChild(wrapper);
 
-// TODO: Override fetch so I can get the transcript from the API
-// const { fetch: originalFetch } = window;
-
-// (() => {
-// 	window.fetch = async (...args) => {
-// 		let [resource, config] = args;
-// 		// request interceptor here
-// 		const response = await originalFetch(resource, config);
-// 		console.log("yohooo a fetch was made =======================")
-// 		console.log(response)
-// 		return response;
-// 	};
-// })();
+fetch("https://catfact.ninja/fact").then((res) => {
+	console.log("cat facts ===========================", res.json());
+});

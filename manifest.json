@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "Stream (from Microsoft 365) Transcript Extrator",
+	"name": "Transcript Extrator for Stream (from Microsoft 365)",
 	"version": "1.0",
-	"description": "Microsoft Stream one click transcript extractor. Copies it to your clipboard for easy summarization of meetings via AI (LLMs)",
+	"description": "Microsoft Stream one click transcript extractor. Copies the transcript to your clipboard for easy summarization of meetings via AI (LLMs)",
 	"action": {},
 	"background": {},
 	"permissions": [],
