@@ -1,6 +1,4 @@
 (() => {
-	console.log("self executing function ======================");
-
 	const { fetch: originalFetch } = window;
 
 	window.fetch = async (...args) => {
@@ -9,13 +7,23 @@
 
 		const clone = response.clone();
 
-		console.log("yohooo a fetch was made =======================")
-		
-		const contentType = clone.headers.get("content-type");
-        if (contentType && contentType.includes("application/json")) {
-            clone.json()
-			.then((data) => console.log("heeeeere's Johnny! ================", data))
-			.catch((err) => console.error(err));
+		if (resource.includes('streamContent')) {
+			clone.json()
+				.then((data) => {
+					const hiddenDiv = document.createElement('div').style = "display: none";
+					hiddenDiv.innerHTML = data.entries
+						.map(x => x.text)
+						.reduce((sum, x) => sum + x, "\n");
+
+					//TODO: fix this error: TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
+					window.document.body.appendChild(hiddenDiv);
+
+					console.log(data.entries
+						.map(x => x.text)
+						.reduce((sum, x) => sum + x + " \n"))
+					console.log(hiddenDiv.innerHTML)
+				})
+				.catch((err) => console.error(err));
 		}
 
 		return response;

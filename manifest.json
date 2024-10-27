@@ -9,13 +9,10 @@
 		"activeTab",
 		"scripting"
 	],
-	"host_permissions": [
-		"<all_urls>"
-	],
 	"content_scripts": [
 		{
 			"matches": [
-				"<all_urls>"
+				"https://*/*stream.aspx*"
 			],
 			"js": [
 				"content.js"
