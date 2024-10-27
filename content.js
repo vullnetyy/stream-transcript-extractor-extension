@@ -1,24 +1,11 @@
-(() => {
-	const { fetch: originalFetch } = window;
+var fetchOverride = document.createElement("script");
+fetchOverride.src = chrome.runtime.getURL("fetchOverride.js");
+fetchOverride.onload = function () {
+	this.remove();
+};
+(document.head || document.documentElement).appendChild(fetchOverride);
 
-	window.fetch = async (...args) => {
-		let [resource, config] = args;
-		const response = await originalFetch(resource, config);
-
-		const clone = response.clone();
-
-		console.log("yohooo a fetch was made =======================")
-		clone.json()
-			.then((data) => console.log("heeeeere's Johnny! ================", data))
-			.catch((err) => console.error(err));
-
-		return response;
-	};
-
-
-})();
-
-
+// TODO: make this into HTML + css instead of js
 let wrapper = document.createElement('div');
 let copyTranscriptButton = document.createElement('button');
 let closeButton = document.createElement('button');
@@ -29,6 +16,9 @@ wrapper.style = "position: fixed; top: 20; right: 20; z-index: 9999;";
 
 closeButton.innerHTML = "X";
 copyTranscriptButton.innerHTML = "Copy Transcript";
+
+document.querySelector("body").appendChild(wrapper);
+// TODO: END
 
 copyTranscriptButton.addEventListener('click', async () => {
 	const textToCopy = getTranscript();
@@ -48,10 +38,4 @@ copyTranscriptButton.addEventListener('click', async () => {
 
 closeButton.addEventListener('click', () => {
 	wrapper.remove();
-});
-
-document.querySelector("body").appendChild(wrapper);
-
-fetch("https://catfact.ninja/fact").then((res) => {
-	console.log("cat facts ===========================", res.json());
 });

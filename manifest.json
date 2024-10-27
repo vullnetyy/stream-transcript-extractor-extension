@@ -5,14 +5,30 @@
 	"description": "Microsoft Stream one click transcript extractor. Copies the transcript to your clipboard for easy summarization of meetings via AI (LLMs)",
 	"action": {},
 	"background": {},
-	"permissions": [],
+	"permissions": [
+		"activeTab",
+		"scripting"
+	],
+	"host_permissions": [
+		"<all_urls>"
+	],
 	"content_scripts": [
 		{
 			"matches": [
-				"https://*/*stream.aspx*"
+				"<all_urls>"
 			],
 			"js": [
 				"content.js"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"fetchOverride.js"
+			],
+			"matches": [
+				"<all_urls>"
 			]
 		}
 	]
