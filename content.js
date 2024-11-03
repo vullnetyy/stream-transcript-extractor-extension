@@ -25,7 +25,6 @@ wrapper.className = "transcript-extractor-wrapper";
 
 document.querySelector("body").appendChild(wrapper);
 
-//const copyTranscriptButton = document.querySelector('#copy-button-transcript-extractor-for-microsoft-stream');
 copyTranscriptButton.addEventListener('click', async () => {
 	const textToCopy = getTranscript();
 
@@ -44,7 +43,6 @@ downloadTranscriptButton.addEventListener('click', async () => {
 	download(textToDownload);
 });
 
-//const closeButton = document.querySelector('#close-button-transcript-extractor-for-microsoft-stream');
 closeButton.addEventListener('click', () => {
 	wrapper.remove();
 });
