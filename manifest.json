@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "Transcript Extrator for Stream (from Microsoft 365)",
+	"name": "Transcript Extractor for Stream (from Microsoft 365)",
 	"version": "1.0",
 	"description": "Microsoft Stream one click transcript extractor. Copies the transcript to your clipboard for easy summarization of meetings via AI (LLMs)",
 	"action": {},
@@ -9,6 +9,12 @@
 		"activeTab",
 		"scripting"
 	],
+	"icons": {
+		"16": "icons/transcript-icon16.png",
+		"32": "icons/transcript-icon32.png",
+		"48": "icons/transcript-icon48.png",
+		"128": "icons/transcript-icon128.png"
+	},
 	"content_scripts": [
 		{
 			"matches": [
