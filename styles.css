@@ -1,0 +1,37 @@
+div.transcript-extractor-wrapper {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	z-index: 9999;
+	padding: 10px;
+	border-color: lightcoral;
+	border-width: 1px;
+	border-style: solid;
+    background: rgba(150, 20, 20, 0.5);
+}
+
+div.transcript-extractor-wrapper button.transcript-extractor-button {
+	box-shadow:inset 0px 1px 3px 0px #9fb4f2;
+	background-color:rgb(188, 25, 72);
+	border-radius:5px;
+	border:1px solid rgb(188, 25, 72);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #283966;
+	margin: 0 5px;
+}
+
+div.transcript-extractor-wrapper button.transcript-extractor-button:hover {
+	background-color:rgb(170, 20, 66);
+}
+
+div.transcript-extractor-wrapper button.transcript-extractor-button:active {
+	position:relative;
+	top:1px;
+}

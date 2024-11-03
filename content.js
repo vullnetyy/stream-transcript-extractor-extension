@@ -13,7 +13,6 @@ let closeButton = document.createElement('button');
 wrapper.appendChild(copyTranscriptButton);
 wrapper.appendChild(downloadTranscriptButton);
 wrapper.appendChild(closeButton);
-wrapper.style = "position: fixed; top: 20; right: 20; z-index: 9999;";
 
 closeButton.innerHTML = "X";
 copyTranscriptButton.innerHTML = "Copy Transcript";
@@ -21,7 +20,7 @@ downloadTranscriptButton.innerHTML = "Download Transcript";
 
 closeButton.className = "transcript-extractor-button";
 copyTranscriptButton.className = "transcript-extractor-button";
-downloadTranscriptButton.className = "transcript-extractor-button";
+downloadTranscriptButton.className = "transcript-extractor-button transcript-extractor-close-button";
 wrapper.className = "transcript-extractor-wrapper";
 
 document.querySelector("body").appendChild(wrapper);
