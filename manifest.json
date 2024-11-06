@@ -5,10 +5,6 @@
 	"description": "Microsoft Stream one click transcript extractor. Copy or download the transcript for easy summarization of meetings via AI (LLMs)",
 	"action": {},
 	"background": {},
-	"permissions": [
-		"activeTab",
-		"scripting"
-	],
 	"icons": {
 		"16": "icons/transcript-icon16.png",
 		"32": "icons/transcript-icon32.png",
